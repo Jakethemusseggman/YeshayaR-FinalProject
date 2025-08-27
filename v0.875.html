@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+<style>
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Montserrat;
+  scroll-behavior: smooth;
+}
+
+.background {
+  background-image: url('https://4kwallpapers.com/images/wallpapers/ocean-waves-water-high-tides-5k-2880x1800-1341.jpg');
+  height: 100%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*Tint for content and things*/
+
+.tint {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 100%);
+}
+
+/*Navigation Bar*/
+
+nav {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-bar {
+  color: white;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+nav ul li a:hover {
+  color: rgb(173, 216, 230);
+}
+
+/*Menu One, Apple liquid glass style*/
+
+.menu-one {
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  width: 700px;
+  height: 450px;
+  padding: 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  color: white;
+  font-weight: 100;
+  overflow: hidden;
+  
+}    
+
+.menu-one::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ border-radius: inherit;
+ background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%);
+ opacity: 0.6;
+ pointer-events: none;
+  }
+
+</style>
+	</head>
+        <body>
+
+        <div class = "background">
+        	<div class = "content"> 
+            	<div class = "tint">
+                	<nav>
+                		<div class = "navigation-bar"> The Plastic Problem </div>
+                        <ul>
+                    		<li><a href = "Link">HOME</a></li>
+                    		<li><a href = "Link">PLASTICS MANUFACTURING</a></li>
+                    		<li><a href = "Link">GOVERNMENTAL ACTIONS</a></li>
+                    		<li><a href = "Link">EFFECTS</a></li>
+                		</ul> 	
+                   	</nav>
+               </div>
+               
+               <div class = "menu-one">
+               		<h3> What's on this page? </h3>
+                    
+                    <p> [Content goes here] </p>
+               </div>
+               
+           </div>
+       </div>    
+
+        </body>
+</html>
