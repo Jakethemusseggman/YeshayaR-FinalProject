@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title> Ocean Plastic Pollution </title>
+    	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Montserrat;
+  scroll-behavior: smooth;
+}
+
+.background {
+  background-image: url('https://4kwallpapers.com/images/wallpapers/ocean-waves-water-high-tides-5k-2880x1800-1341.jpg');
+  height: 100%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*Tint for content and things*/
+
+.tint {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 100%);
+}
+
+/*Navigation Bar*/
+
+nav {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-bar {
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+nav ul li a:hover {
+  color: rgb(173, 216, 230);
+}
+
+/*Menu One, Apple liquid glass style*/
+
+.small-menu-one {
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  width: 700px;
+  height: 450px;
+  padding: 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  color: white;
+  overflow: hidden;
+}    
+
+.small-menu-one::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%);
+  opacity: 0.6;
+  pointer-events: none;
+  }
+
+.website-links-one a{
+  position: relative;
+  margin-top: 35px;
+  width: 400px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transition: 0.5s;
+  color: white;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+}
+
+.website-links-one a:hover{
+  background: rgba(200, 200, 200, 0.08);
+  border: 1px solid white;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+
+/*Parallax content*/
+
+.big-menu-one {
+  height: 60vh;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  background: #f4f4f4;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.big-menu-one h1 {
+  color: black;
+  margin-left: 40px;
+  
+}
+
+.big-menu-one p {
+  color: black;
+  width: 720px;
+  height: 100px;
+  margin-left: 40px;
+  font-weight: bold;
+}
+
+.img-one {
+  float: right;
+  margin-right: 160px;
+  margin-top: -400px;
+  border-radius: 20px;
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+</style>
+	</head>
+        <body>
+
+        <div class = "background">
+        	<div class = "content"> 
+            	<div class = "tint">
+                	<nav>
+                		<div class = "navigation-bar"><h1>Ocean Plastics Research Initiative</h1></div>
+                        <ul>
+                    		<li><a href = "Link">HOME</a></li>
+                    		<li><a href = "Link">GOVERNMENTAL ACTIONS</a></li>
+                    		<li><a href = "Link">EFFECTS</a></li>
+                    		<li><a href = "Link">ABOUT</a></li>
+                		</ul> 	
+                   	</nav>
+               </div>
+               
+               <div class = "small-menu-one">
+               		<h2> What's on this page? </h2>
+                    
+                    <p> 
+                        The following will provide a comprehensive overview 
+                        of the current global plastic production and waste 
+                        issues, with a specific focus on New Zealand's efforts 
+                        to mitigate plastic pollution. The following information 
+                        will outline the general manufacturing process of plastics, 
+                        government policies, and their effectiveness in addressing 
+                        plastic waste, particularly in relation to oceanic pollution. 
+                        The following will also explore the environmental, economic, 
+                        and health impacts of plastic pollution. 
+                    </p>
+                    
+                    <div class = "website-links-one">
+                    	<a href = "#manufacturing-process">MANUFACTURING PROCESS OF PLASTICS</a>                       
+                        <a href = "#Anchor Link">CURRENT LEVELS OF PLASTIC PRODUCTION</a>                     
+                        <a href = "#Anchor Link">REASONING BEHIND THIS SURGE IN PLASTIC PRODUCTION</a>       
+                    </div>
+               </div>
+           	   <div class="big-menu-one" id="manufacturing-process">
+               		<h1> How is plastic made? </h1>
+                    <p> 
+                    	Plastics can be either synthetic or bio-based. Synthetic plastics 
+                        are derived from fossil fuels like crude oil and natural gas, while 
+                        bio-based plastics are made from renewable 
+                        biological sources such as starches, sugars, and vegetable oils.
+                        Plastic manufacturing involves various processes, often 
+                        requiring precise control of temperature and pressure.
+                    </p>
+                    <p> 
+                        One common method is casting, where a mold is first coated with 
+                        a release agent and sometimes preheated. A thermosetting resin, 
+                        typically mixed with a curing agent, is poured into the mold. 
+                        The resin then undergoes curing—either chemically or with heat—until 
+                        it solidifies. Once set, the mold is opened, and the part is removed. 
+                        Any excess material, such as sprues, is trimmed or sanded off.
+                   </p>
+                   <p>
+                        Although there are many methods of plastic processing—such as 
+                        injection molding, extrusion, and blow molding—casting remains a versatile 
+                        and cost-effective technique, especially for small production runs and complex shapes.
+                   </p>
+				   <img src="https://www.plasticexpert.co.uk/wp-content/uploads/2024/09/AdobeStock_759704272-1.jpeg" alt="placeholder" class="img-one">
+               </div>
+           </div>
+       </div>    
+
+        </body>
+</html>
