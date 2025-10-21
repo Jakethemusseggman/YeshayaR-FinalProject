@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <title> Ocean Plastic Pollution </title>
+        <link href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
+<style>
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Montserrat;
+    scroll-behavior: smooth;
+    background: rgb(44, 62, 80);
+}
+
+.background {
+    background-image: url('https://images.unsplash.com/photo-1474533883693-59a44dbb964e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Tint for content and things*/
+
+.tint {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 100%);
+}
+
+/*Navigation Bar*/
+
+nav {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-bar {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: rgb(173, 216, 230);
+}
+
+/*Menu One, Apple liquid glass style*/
+
+.small-menu-one {
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    width: 700px;
+    height: 450px;
+    padding: 30px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    color: white;
+    overflow: hidden;
+}    
+
+.small-menu-one::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.website-links-one a{
+    position: relative;
+    margin-top: 35px;
+    width: 400px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    transition: 0.5s;
+    color: white;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+}
+
+.website-links-one a:hover{
+    background: rgba(200, 200, 200, 0.08);
+    border: 1px solid white;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+}
+
+/*Parallax content*/
+
+/* #1 */
+
+.big-menu-one {
+    height: 60vh;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: #f4f4f4;
+    padding: 20px;
+    margin-top: 80px;
+    transition: 0.5s;
+}
+
+.big-menu-one h1 {
+    color: black;
+    margin-left: 40px;
+    margin-top: 50px;
+
+}
+
+.big-menu-one p {
+    color: black;
+    width: 720px;
+    height: 100px;
+    margin-left: 40px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.img-one {
+    float: right;
+    margin-right: 160px;
+    margin-top: -470px;
+    border-radius: 20px;
+    height: 400px;
+    width: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+
+/*Background #2*/
+
+.background-img-one {
+    background-image: url('https://images.unsplash.com/photo-1559962874-506c8be13a40?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 750px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Menu Two, Apple liquid glass style*/
+
+.small-menu-two {
+    position: relative;
+    top: 40px;
+    right: 140px;
+    margin-left: 200px;
+    width: 1000px;
+    height: 600px;
+    padding: 30px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    color: white;
+    overflow: hidden;
+}
+
+.small-menu-two::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.website-links-two a{
+    position: relative;
+    margin-top: 35px;
+    width: 755px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    transition: 0.5s;
+    color: white;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* #2 */
+
+.big-menu-two {
+    padding: 40px 20px;
+    background: rgb(44, 62, 80);
+    color: white;
+    height: 900px;
+}
+
+.big-menu-two h1 {
+    color: white;
+    margin-top: 45px;
+    margin-left: 40px;
+}
+
+.big-menu-two p {
+    color: white;
+    font-weight: bold;
+    width: 700px;
+    height: 220px;
+    margin-top: 45px;
+    margin-left: 40px;
+}
+
+.graph-holder {
+    max-width: 50%;
+    background-color: white;
+    margin-left: 40px;
+    margin-top: -100px;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+}
+
+.faq-section {
+    max-width: 600px;
+    margin-left: 1140px;
+    margin-top: -760px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.faq-section h1 {
+    color: black;
+}
+
+.faq-item {
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #007bff;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-answer:focus {
+    outline: none;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.faq-answer {
+    display: none;
+}
+
+.faq-answer p {
+    color: black;
+    height: 80px;
+    width: 500px;
+    margin-left: 45px;
+    margin-top: 20px;
+}
+
+.faq-question.active .icon {
+    content: "-";
+}
+
+/* Page Footer */
+
+.page-footer {
+    height: 350px;
+    background: #f4f4f4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.page-footer h2 {
+    position: relative;
+    top: 60px;
+    margin-left: 60px;
+}
+
+.page-footer p {
+    width: 600px;
+    font-weight: bold;
+    position: relative;
+    top: 70px;
+    margin-left: 60px;
+}
+
+.page-footer h3 {
+    position: relative;
+    bottom: 140px;
+    left: 1000px;
+    width: 200px;
+}
+
+.page-footer .github h3 {
+    position: relative;
+    bottom: 341px;
+    left: 1400px;
+    width: 200px;
+}
+
+.page-footer nav {
+    list-style-type: none;
+    position: relative;
+    bottom: 355px;
+    left: 1355px;
+    width: 100px;
+}
+
+.page-footer ul {
+    list-style-type: none;
+    position: relative;
+    bottom: 140px;
+    left: 945px;
+    width: 200px;
+}
+
+.page-footer li a {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 200px;
+}
+
+.end {
+    height: 100px;
+    background: url('https://images.unsplash.com/photo-1625619563341-d2dd70db7080?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    
+}
+
+.end h3 {
+    color: white;
+    margin: auto;
+    width: 100px;
+    height: 40px;
+}
+
+</style>
+    </head>
+        <body>
+
+            <div class = "background">
+                <div class = "content"> 
+                    <div class = "tint">
+                        <nav>
+                            <div class = "navigation-bar"><h1>Ocean Plastics Research Initiative</h1></div>
+                                <ul>
+                                    <li><a href = "Link">HOME</a></li>
+                                    <li><a href = "Link">GOVERNMENTAL ACTIONS</a></li>
+                                    <li><a href = "Link">EFFECTS</a></li>
+                                    <li><a href = "Link">ABOUT</a></li>
+                                </ul> 	
+                        </nav>
+                    </div>
+            
+                    <div class = "small-menu-one">
+                        <h2> What's on this page? </h2>
+            
+                        <p> 
+                        The following will provide a comprehensive overview 
+                        of the current global plastic production and waste 
+                        issues, with a specific focus on New Zealand's efforts 
+                        to mitigate plastic pollution. The following information 
+                        will outline the general manufacturing process of plastics, 
+                        government policies, and their effectiveness in addressing 
+                        plastic waste, particularly in relation to oceanic pollution. 
+                        The following will also explore the environmental, economic, 
+                        and health impacts of plastic pollution. 
+                        </p>
+            
+                        <div class = "website-links-one">
+                            <a href = "#manufacturing-process">MANUFACTURING PROCESS OF PLASTICS</a>                       
+                            <a href = "#current-levels-of-plastic-production">CURRENT LEVELS OF PLASTIC PRODUCTION</a>                     
+                            <a href = "#surge-plastic-production">REASONING BEHIND THIS SURGE IN PLASTIC PRODUCTION</a>       
+                        </div>
+                    </div>
+            
+                    <div class = "big-menu-one" id = "manufacturing-process">
+                        <h1> How is plastic made? </h1>
+                        <p> 
+                        Plastics can be either synthetic or bio-based. Synthetic plastics 
+                        are derived from fossil fuels like crude oil and natural gas, while 
+                        bio-based plastics are made from renewable 
+                        biological sources such as starches, sugars, and vegetable oils.
+                        Plastic manufacturing involves various processes, often 
+                        requiring precise control of temperature and pressure.
+                        </p>
+                        <p> 
+                        One common method is casting, where a mold is first coated with 
+                        a release agent and sometimes preheated. A thermosetting resin, 
+                        typically mixed with a curing agent, is poured into the mold. 
+                        The resin then undergoes curing—either chemically or with heat—until 
+                        it solidifies. Once set, the mold is opened, and the part is removed. 
+                        Any excess material, such as sprues, is trimmed or sanded off.
+                        </p>
+                        <p>
+                        Although there are many methods of plastic processing—such as 
+                        injection molding, extrusion, and blow molding—casting remains a versatile 
+                        and cost-effective technique, especially for small production runs and complex shapes.
+                        </p>
+                        <img src = "https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "Plastic manufacturing process" class = "img-one">
+                    </div>
+            
+                    <div class = "background-img-one">
+                        <div class = "small-menu-two" id = "surge-plastic-production">
+                            <h2> What is the reason behind such a surge in plastic production? </h2>
+                            
+                            <p>
+                            One main reason for this high amount of plastic production per year is 
+                            the global production of single-use plastics such as food packaging, bottles, 
+                            and plastic containers. The mass production of plastics globally has been outpacing 
+                            the development of robust waste management systems. Another big reason for this surge 
+                            in plastic production is the inadequate waste management implemented by big waste 
+                            management corporations, with a very small fraction of plastic waste actually being 
+                            recycled whilst the rest is mismanaged, leading to the waste ending up in landfills,
+                            incinerated, or simply released into the environment. It has been estimated that 
+                            we will have more plastics in our oceans than fish by the year 2050.
+                            </p>
+            
+                            <h3> External links on waste management systems: </h3>
+                            <div class = "website-links-two">
+                                <a href = "https://www.link-labs.com/blog/the-biggest-problems-with-waste-management-and-how-to-overcome-them">THE BIGGEST PROBLEMS WITH WASTE MANAGEMENT AND HOW TO OVERCOME THEM</a>                       
+                                <a href = "https://www.nrdc.org/stories/single-use-plastics-101">THE DANGEROUS EFFECT OF THE PRODUCTION OF SINGLE USE PLASTICS</a>                     
+                                <a href = "surge-plastic-production">HOW MUCH OF OUR PLASTIC WASTE IS ACTUALLY RECYCLED</a>       
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "big-menu-two" id = "current-levels-of-plastic-production">
+                        <div class = "wave"> </div>
+                        <h1> Current levels of plastic production </h1>
+                        <p>
+                        Humans produce more than 400,000,000 metric tons of plastic every 
+                        year, which is about the weight of every single human on the planet. 
+                        However, only 0.5% of all that plastic enters the ocean, making the weight 
+                        of plastic that goes into our oceans 2,000,000 metric tons. The rising levels 
+                        of plastic have been projected to grow over time, according to a recent study by 
+                        an environmental research association.
+                        </p>
+            `           <div class = "graph-holder">
+                            <canvas id = "plastic-production-graph"></canvas>
+                        </div>
+                        <section class = "faq-section">
+                            <h1 class = "faq-title"> Frequently Asked Questions </h1>
+                                <div class = "question-section">
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> Where do 79% of all plastic products end up? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                A significant issue arises from the inefficient treatment of 79% of plastic 
+                                                products, leading to their release into landfills or natural environments. 
+                                                Some researchers suggest that by 2050 there could be more plastic than fish 
+                                                in the oceans by weight.
+                                                </p>
+                                            </div>
+                                    </div>
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> What is the biggest issue of plastic pollution? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                The most visible impacts of plastic debris are the ingestion, suffocation, 
+                                                and entanglement of species. Wildlife such as birds, whales, fish, and turtles
+                                                mistake indigestible plastic waste for food and die of starvation as their 
+                                                stomachs become filled with it.
+                                                </p>
+                                            </div>
+                                    </div>
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> What will happen in 2050 because of plastic? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                Greenhouse gas emissions related to plastic would jump 37 percent from 
+                                                2020 levels to 3.35 gigatons of carbon dioxide equivalent in 2050 — the 
+                                                same as nearly 9,000 natural gas-fired power plants operating for one 
+                                                year, or the energy use for more than 436 million homes for one year.
+                                                </p>
+                                            </div>
+                                    </div>
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> Which country waste the most plastic? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                If we're looking at the countries that are responsible for the highest 
+                                                amount of plastic production, China tops the list. China is responsible 
+                                                for 32% of global plastic materials production in 2021, making it the 
+                                                world number one plastic producer by far.
+                                                </p>
+                                            </div>
+                                    </div>
+                                    
+                                    </div>
+                        </section>
+                    </div>
+                    <div class = "page-footer"> 
+                        <h2> Ocean Plastics Research Initiative </h2>
+                        <p> 
+                            This website will provide a comprehensive overview of the current global plastic production 
+                            and waste issues, with a specific focus on New Zealand's efforts to mitigate plastic pollution. 
+                            The following information will outline the general manufacturing process of plastics, government 
+                            policies, and their effectiveness in addressing plastic waste, particularly in relation to oceanic
+                            pollution. The following will also explore the environmental, economic, and health impacts of plastic 
+                            pollution. 
+                        </p>
+                        <h3> RESOURCES </h3>
+                        <ul>
+                            <li><a href = "#home">Images</a></li>
+                            <li><a href = "#news">Background Images</a></li>
+                            <li><a href = "#contact">Sources</a></li>
+                            <li><a href = "#about">Learning Resources</a></li>
+                        </ul>
+                        <div class = "github"><h3> GITHUB </h3></div>
+                        <nav>
+                            <li><a href = "https://github.com/Jakethemusseggman/YeshayaR-FinalProject/wiki">Final Project 2025</a></li>
+                        </nav>
+                    </div>
+                    <div class = "end">
+                        <h3> @Jakethemusseggman </h3>
+                    </div>
+                </div>
+            </div>    
+
+            <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const questions = document.querySelectorAll(".faq-question");
+            
+                questions.forEach(question => {
+                    question.addEventListener("click", () => {
+                        question.classList.toggle("active");
+                        const answer = question.nextElementSibling;
+                        const icon = question.querySelector(".icon");
+            
+                        if (getComputedStyle(answer).display === "block") {
+                            answer.style.display = "none";
+                            icon.textContent = "+";
+                        } else {
+                            answer.style.display = "block";
+                            icon.textContent = "-";
+                        }
+                    });
+                });
+            });
+            
+            
+            const ctx = document.getElementById('plastic-production-graph').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [1950, 1980, 2000, 2019, 2021, 2025],
+                    datasets: [{
+                        label: 'Plastic Production (Million Metric Tons)',
+                        data: [2, 60, 187, 460, 390.7, 450],
+                        borderColor: 'rgba(0,0,0,0.9)',
+                        backgroundColor: 'rgba(0,0,0,0.05)',
+                        tension: 0.3
+                    }]
+                },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    },
+                    title: {
+                        display: true,
+                        text: 'Global Plastic Production Over Time'
+                    }
+                },
+            scales: {
+                y: {
+                    min: 0,
+                    max: 500,
+                title: {
+                    display: true,
+                    text: 'Million Metric Tons'
+                }
+            },
+                x: {
+                title: {
+                    display: true,
+                    text: 'Year'
+                }
+            }
+            }
+            }
+            });
+            </script>
+
+        </body>
+</html>
