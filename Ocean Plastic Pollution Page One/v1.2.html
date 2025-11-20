@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <title> Ocean Plastic Pollution </title>
+        <link href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+        <body>
+
+            <div class = "background">
+                <div class = "content"> 
+                    <div class = "tint">
+                        <nav>
+                            <div class = "navigation-bar"><h1>Ocean Plastics Research Initiative</h1></div>
+                                <ul>
+                                    <li><a href = "Link">HOME</a></li>
+                                    <li><a href = "Link">GOVERNMENTAL ACTIONS</a></li>
+                                    <li><a href = "Link">EFFECTS</a></li>
+                                    <li><a href = "Link">ABOUT</a></li>
+                                </ul> 	
+                        </nav>
+                    </div>
+            
+                    <div class = "small-menu-one">
+                        <h2> What's on this page? </h2>
+            
+                        <p> 
+                        The following will provide a comprehensive overview 
+                        of the current global plastic production and waste 
+                        issues, with a specific focus on New Zealand's efforts 
+                        to mitigate plastic pollution. The following information 
+                        will outline the general manufacturing process of plastics, 
+                        government policies, and their effectiveness in addressing 
+                        plastic waste, particularly in relation to oceanic pollution. 
+                        The following will also explore the environmental, economic, 
+                        and health impacts of plastic pollution. 
+                        </p>
+            
+                        <div class = "website-links-one">
+                            <a href = "#manufacturing-process">MANUFACTURING PROCESS OF PLASTICS</a>                       
+                            <a href = "#current-levels-of-plastic-production">CURRENT LEVELS OF PLASTIC PRODUCTION</a>                     
+                            <a href = "#surge-plastic-production">REASONING BEHIND THIS SURGE IN PLASTIC PRODUCTION</a>       
+                        </div>
+                    </div>
+            
+                    <div class = "big-menu-one" id = "manufacturing-process">
+                        <h1> How is plastic made? </h1>
+                        <p> 
+                        Plastics can be either synthetic or bio-based. Synthetic plastics 
+                        are derived from fossil fuels like crude oil and natural gas, while 
+                        bio-based plastics are made from renewable 
+                        biological sources such as starches, sugars, and vegetable oils.
+                        Plastic manufacturing involves various processes, often 
+                        requiring precise control of temperature and pressure.
+                        </p>
+                        <p> 
+                        One common method is casting, where a mold is first coated with 
+                        a release agent and sometimes preheated. A thermosetting resin, 
+                        typically mixed with a curing agent, is poured into the mold. 
+                        The resin then undergoes curing—either chemically or with heat—until 
+                        it solidifies. Once set, the mold is opened, and the part is removed. 
+                        Any excess material, such as sprues, is trimmed or sanded off.
+                        </p>
+                        <p>
+                        Although there are many methods of plastic processing—such as 
+                        injection molding, extrusion, and blow molding—casting remains a versatile 
+                        and cost-effective technique, especially for small production runs and complex shapes.
+                        </p>
+                        <img src = "https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "Plastic manufacturing process" class = "img-one">
+                    </div>
+            
+                    <div class = "background-img-one">
+                        <div class = "small-menu-two" id = "surge-plastic-production">
+                            <h2> What is the reason behind such a surge in plastic production? </h2>
+                            
+                            <p>
+                            One main reason for this high amount of plastic production per year is 
+                            the global production of single-use plastics such as food packaging, bottles, 
+                            and plastic containers. The mass production of plastics globally has been outpacing 
+                            the development of robust waste management systems. Another big reason for this surge 
+                            in plastic production is the inadequate waste management implemented by big waste 
+                            management corporations, with a very small fraction of plastic waste actually being 
+                            recycled whilst the rest is mismanaged, leading to the waste ending up in landfills,
+                            incinerated, or simply released into the environment. It has been estimated that 
+                            we will have more plastics in our oceans than fish by the year 2050.
+                            </p>
+            
+                            <h3> External links on waste management systems: </h3>
+                            <div class = "website-links-two">
+                                <a href = "https://www.link-labs.com/blog/the-biggest-problems-with-waste-management-and-how-to-overcome-them">THE BIGGEST PROBLEMS WITH WASTE MANAGEMENT AND HOW TO OVERCOME THEM</a>                       
+                                <a href = "https://www.nrdc.org/stories/single-use-plastics-101">THE DANGEROUS EFFECT OF THE PRODUCTION OF SINGLE USE PLASTICS</a>                     
+                                <a href = "surge-plastic-production">HOW MUCH OF OUR PLASTIC WASTE IS ACTUALLY RECYCLED</a>       
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "big-menu-two" id = "current-levels-of-plastic-production">
+                        <div class = "wave"> </div>
+                        <h1> Current levels of plastic production </h1>
+                        <p>
+                        Humans produce more than 400,000,000 metric tons of plastic every 
+                        year, which is about the weight of every single human on the planet. 
+                        However, only 0.5% of all that plastic enters the ocean, making the weight 
+                        of plastic that goes into our oceans 2,000,000 metric tons. The rising levels 
+                        of plastic have been projected to grow over time, according to a recent study by 
+                        an environmental research association.
+                        </p>
+                        <div class = "graph-holder">
+                            <canvas id = "plastic-production-graph"></canvas>
+                        </div>
+                        <section class = "faq-section">
+                            <h1 class = "faq-title"> Frequently Asked Questions </h1>
+                                <div class = "question-section">
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> Where do 79% of all plastic products end up? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                A significant issue arises from the inefficient treatment of 79% of plastic 
+                                                products, leading to their release into landfills or natural environments. 
+                                                Some researchers suggest that by 2050 there could be more plastic than fish 
+                                                in the oceans by weight.
+                                                </p>
+                                            </div>
+                                    </div>
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> What is the biggest issue of plastic pollution? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                The most visible impacts of plastic debris are the ingestion, suffocation, 
+                                                and entanglement of species. Wildlife such as birds, whales, fish, and turtles
+                                                mistake indigestible plastic waste for food and die of starvation as their 
+                                                stomachs become filled with it.
+                                                </p>
+                                            </div>
+                                    </div>
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> What will happen in 2050 because of plastic? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                Greenhouse gas emissions related to plastic would jump 37 percent from 
+                                                2020 levels to 3.35 gigatons of carbon dioxide equivalent in 2050 — the 
+                                                same as nearly 9,000 natural gas-fired power plants operating for one 
+                                                year, or the energy use for more than 436 million homes for one year.
+                                                </p>
+                                            </div>
+                                    </div>
+                        
+                                    <div class = "faq-item">
+                                        <button class = "faq-question"> Which country waste the most plastic? <span class = "icon">+</span></button>
+                                            <div class = "faq-answer">
+                                                <p> 
+                                                If we're looking at the countries that are responsible for the highest 
+                                                amount of plastic production, China tops the list. China is responsible 
+                                                for 32% of global plastic materials production in 2021, making it the 
+                                                world number one plastic producer by far.
+                                                </p>
+                                            </div>
+                                    </div>
+                                    
+                                    </div>
+                        </section>
+                    </div>
+                    <div class = "page-footer"> 
+                        <h2> Ocean Plastics Research Initiative </h2>
+                        <p> 
+                            This website will provide a comprehensive overview of the current global plastic production 
+                            and waste issues, with a specific focus on New Zealand's efforts to mitigate plastic pollution. 
+                            The following information will outline the general manufacturing process of plastics, government 
+                            policies, and their effectiveness in addressing plastic waste, particularly in relation to oceanic
+                            pollution. The following will also explore the environmental, economic, and health impacts of plastic 
+                            pollution. 
+                        </p>
+                        <h3> RESOURCES </h3>
+                        <ul>
+                            <li><a href = "#home">Images</a></li>
+                            <li><a href = "#news">Background Images</a></li>
+                            <li><a href = "#contact">Sources</a></li>
+                            <li><a href = "#about">Learning Resources</a></li>
+                        </ul>
+                        <div class = "github"><h3> GITHUB </h3></div>
+                        <nav>
+                            <li><a href = "https://github.com/Jakethemusseggman/YeshayaR-FinalProject/wiki">Final Project 2025</a></li>
+                        </nav>
+                    </div>
+                    <div class = "end">
+                        <h3> @Jakethemusseggman </h3>
+                    </div>
+                </div>
+            </div>    
+        <script src = "script.js"></script>
+        </body>
+</html>
